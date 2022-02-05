@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Start Page</title>
+
+        <style>
+            .wrapper {
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                position: absolute;
+            }
+            .welcome_message {
+                top: 25%;
+                position: relative;
+            }
+            .login_area {
+                top: 50%;
+                position: relative;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="welcome_message">
+                <pre>
+                    체크박스를 클릭한 후 계정이 존재하지 않으면 만듭니다.
+                    {{message}}
+                </pre>
+            </div>
+            <div class="login_area">
+                <form method="POST">
+                    {% csrf_token %}
+                    <!-- Cross Site Request Forgery -->
+                    <p class="p_wrapper">
+                        <input
+                            type="text"
+                            placeholder="아이디"
+                            name="user_id"
+                            required
+                        />
+                    </p>
+                    <p class="p_wrapper">
+                        <input
+                            type="password"
+                            placeholder="비번"
+                            name="password"
+                            required
+                        />
+                    </p>
+                    <p class="p_wrapper">
+                        <input type="submit" value="button" />
+                        <label for="checkbox">계정만들기</label>
+                        <input
+                            type="checkbox"
+                            name="create"
+                            value="checked"
+                        />
+                    </p>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
