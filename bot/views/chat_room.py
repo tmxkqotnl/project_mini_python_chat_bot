@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.views import View
+from django.core.handlers.asgi import ASGIRequest
+from json import loads
     
 class ChatRoom(View):
     def get(self,req):
@@ -9,5 +11,5 @@ class ChatRoom(View):
         
         return render(req,'bot/chatroom.html',{'user_name':user_name})
     
-    def post(self,req):
+    def post(self,req:ASGIRequest):
         return render(req,'bot/chatroom.html')
