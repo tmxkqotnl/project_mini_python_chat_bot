@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from django.views import View
 from bot.models import client
+from uuid import uuid4
 
 class Login(View): # class view
     def get(self,req):
@@ -21,7 +22,7 @@ class Login(View): # class view
             if user_info:
                 return render(req,'bot/index.html',msg)
             else:
-                client.objects.create(user_id=user_id,password=user_pw,name='TEST')
+                client.objects.create(id=uuid4(),user_id=user_id,password=user_pw,name='TEST')
         else:
             user_info = client.objects.filter(user_id=user_id,password=user_pw).first()
             if not user_info:
