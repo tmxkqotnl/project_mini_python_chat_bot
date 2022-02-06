@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -121,6 +122,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "bot\\static"),
+)
 STATIC_URL = 'static/'
 
 # Default primary key field type
@@ -138,5 +142,5 @@ CHANNEL_LAYERS = {
     },
 }
 
-SESSION_COOKIE_AGE = 600
-SESSION_SAVE_EVERY_REQUEST = True
+SESSION_COOKIE_AGE = 120 # 세션 및 쿠키 생존시간
+SESSION_SAVE_EVERY_REQUEST = True # 세션 생존시간 매번 갱신
