@@ -30,14 +30,3 @@ class Login(View): # class view
         
         req.session['user'] = user_id
         return redirect('chat')
-    
-class ChatRoom(View):
-    def get(self,req):
-        user_name = req.session.get('user')
-        if not user_name:
-            return render(req,'bot/index.html')
-        
-        return render(req,'bot/chatroom.html',{'user_name':user_name})
-    
-    def post(self,req):
-        return render(req,'bot/chatroom.html')
