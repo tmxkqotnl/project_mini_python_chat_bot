@@ -1,6 +1,7 @@
+from typing import Optional
 from django.shortcuts import redirect, render
 from django.views import View
-from bot.models import client
+from bot.models.client import Client
 from uuid import uuid4
 
 class Login(View): # class view
@@ -15,18 +16,21 @@ class Login(View): # class view
         user_pw = req.POST.get('password')
         checkbox = True if req.POST.get('create') else False
         
-        user_info = client.objects.filter(user_id=user_id,password=user_pw).first()
         msg = {'message':'아이디 또는 비밀번호를 확인해주세요.'}
+        
+        user_info:Optional[Client] = None
         if checkbox:
-            user_info = client.objects.filter(user_id=user_id).first()
+            user_info = Client.objects.filter(user_id=user_id).first()
             if user_info:
                 return render(req,'bot/index.html',msg)
             else:
-                client.objects.create(id=uuid4(),user_id=user_id,password=user_pw,name='TEST')
+                user_info = Client.objects.create(id=uuid4(),user_id=user_id,password=user_pw)
         else:
-            user_info = client.objects.filter(user_id=user_id,password=user_pw).first()
+            user_info = Client.objects.filter(user_id=user_id,password=user_pw).first()
             if not user_info:
                 return render(req,'bot/index.html',msg)
         
         req.session['user'] = user_id
+        req.session['user_pk'] = str(user_info.id)
+        
         return redirect('chat')
