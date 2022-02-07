@@ -22,6 +22,7 @@
             }
         </style>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
         <div class="wrapper">
@@ -31,8 +32,6 @@
                 <input id="submit" type="button" value="▶" />
             </div>
         </div>
-        <div id="hidden" hidden="true">{{user_name}}</div>
-
         {% csrf_token %}
         {% load static %}
         <script src="{% static 'socket_handler.js' %}"></script>
