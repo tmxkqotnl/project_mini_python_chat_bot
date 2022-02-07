@@ -6,7 +6,7 @@ from uuid import uuid4
 
 class Login(View): # class view
     def get(self,req):
-        if req.session.get('user'):
+        if 'user_id' in req.session and 'user_pk' in req.session:
             return redirect('chat')
         
         return render(req,'bot/index.html')
@@ -30,7 +30,7 @@ class Login(View): # class view
             if not user_info:
                 return render(req,'bot/index.html',msg)
         
-        req.session['user'] = user_id
+        req.session['user_id'] = user_id
         req.session['user_pk'] = str(user_info.id)
         
         return redirect('chat')
