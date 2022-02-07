@@ -14,6 +14,9 @@ then
 elif [ "$1" == "down" ]
 then
     docker-compose down -v
+elif [ "$1" == "redis" ]
+then
+    ./redis/redis-server.exe
 else
     echo "no command found"
 fi

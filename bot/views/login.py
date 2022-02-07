@@ -3,15 +3,16 @@ from django.shortcuts import redirect, render
 from django.views import View
 from bot.models.client import Client
 from uuid import uuid4
+from django.core.handlers.asgi import ASGIRequest
 
 class Login(View): # class view
-    def get(self,req):
+    def get(self,req:ASGIRequest):
         if 'user_id' in req.session and 'user_pk' in req.session:
             return redirect('chat')
         
         return render(req,'bot/index.html')
     
-    def post(self,req):
+    def post(self,req:ASGIRequest):
         user_id = req.POST.get('user_id')
         user_pw = req.POST.get('password')
         checkbox = True if req.POST.get('create') else False

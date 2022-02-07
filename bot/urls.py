@@ -1,5 +1,5 @@
 from django.urls import path 
-from bot.views import login,chat_room,user_info
+from bot.views import login,chat_room, user_info
 
 urlpatterns = [ 
     path('' , login.Login.as_view() , name='login'),

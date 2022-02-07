@@ -1,12 +1,28 @@
+from django.shortcuts import redirect
 from django.views import View
 from django.http import JsonResponse
+from bot.models.chat_content import ChatContent
+from django.core.handlers.asgi import ASGIRequest
+from django.core import serializers
+
 
 class UserInfo(View):
-    def get(self,req):
-        if not 'user_id' in req.session or not 'user_pk' in req.session:
-            return {'message':'no session info found'}
-        
-        return JsonResponse({'message':'Ok','user_id':req.session['user_id'],'user_pk':req.session['user_pk']})
-    
-    def post(self,req):
-        return JsonResponse({'message':"no post response"}) 
+    def get(self, req: ASGIRequest):
+        if not "user_id" in req.session or not "user_pk" in req.session:
+            return redirect("chat")
+
+        msgs = serializers.serialize('json',ChatContent.objects.all().order_by("-create_dt"))
+
+        res = {
+            "user_id": req.session["user_id"],
+            "user_pk": req.session["user_pk"],
+            "message": msgs,
+        }
+        return JsonResponse(res)
+
+    def post(self, req: ASGIRequest):
+        if not "user_id" in req.session or not "user_pk" in req.session:
+            return redirect("chat")
+
+        return JsonResponse({"message": "no post response"})
+
