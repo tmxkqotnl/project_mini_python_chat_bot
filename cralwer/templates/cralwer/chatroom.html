@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Document</title>
+
+        <style>
+            .wrapper {
+                height: 95%;
+                width: 95%;
+                position: absolute;
+                text-align: center;
+            }
+            .chat_area {
+                top: 10%;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+                width: 50%;
+                height: 80%;
+                border: 3px solid black;
+            }
+            #chat-log{
+                margin:10px;
+                margin-left: auto;
+                margin-right: auto;
+                border: 1px solid black;
+                width: 95%;
+                height: 85%;
+                position: relative;
+                overflow-y: scroll;
+            }
+            .myMessage{
+                padding:3%;
+                padding-right:2%;
+                border:1px solid blue;
+                position: relative;
+                text-align: right;
+            }
+        </style>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="chat_area">
+                <div id="chat-log"></div>
+                <input id="chat" type="text" size="47" />
+                <input id="submit" type="button" value="▶" />
+            </div>
+        </div>
+        {% csrf_token %}
+        {% load static %}
+        <script src="{% static 'chat_room_handler.js' %}"></script>
+    </body>
+</html>
