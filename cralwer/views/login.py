@@ -22,15 +22,19 @@ class Login(View): # class view
         msg = {'message':'아이디 또는 비밀번호를 확인해주세요.'}
         user_info:Optional[User] = User.objects.filter(user_id=user_id).first()
         
-        this_uuid = str(uuid4())
         if isinstance(user_info,User):
             if not check_password(user_pw,user_info.password): 
                 return redirect('/',req,msg)    
-            user_token = Token.objects.get(user_pk = user_info.id)
-            user_token.token = this_uuid
-        else:
-            user_info = User.objects.create(id=this_uuid,user_id=user_id,password=make_password(user_pw),sex=checkbox)
-            Token.objects.create(id=uuid4(),user_pk = user_info,token=this_uuid)
             
-        req.session['user_token'] = this_uuid
+            token_uuid = uuid4()
+            user_token:Token = Token.objects.get(user_pk = user_info.id)
+            user_token.token = token_uuid
+            user_token.save()
+            req.session['user_token'] = str(token_uuid)
+        else:
+            token_uuid = uuid4()
+            user_info = User.objects.create(id=uuid4(),user_id=user_id,password=make_password(user_pw),sex=checkbox)
+            Token.objects.create(id=uuid4(),user_pk = user_info,token=token_uuid)
+            req.session['user_token'] = str(token_uuid)
+            
         return redirect('chat')
