@@ -27,11 +27,12 @@ class ChatRoom(View):
                 user_pk=user_token.user_pk
         )
         
+        response_data = {}
         if message[0] == CRAWLING_START and message.__len__()>1:
             categories = message[1:]
             
             for i in range(len(categories),len(CATEGORIES)):
-                categories = categories + [None ]
+                categories = categories + [None]
                 
             Query.objects.create(
                 id = uuid4(),
@@ -41,4 +42,4 @@ class ChatRoom(View):
                 small=categories[2]
             )
         
-        return render(req,'cralwer/chatroom.html')
+        return render(req,'cralwer/chatroom.html',response_data)

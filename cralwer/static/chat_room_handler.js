@@ -8,18 +8,21 @@ document.querySelector("#chat").onkeyup = function (e) {
     }
 };
 
-document.querySelector("#submit").onclick = function (e) {
+document.querySelector("#submit").onclick = async e => {
     const inputArea = document.querySelector("#chat");
     const chatLog = document.querySelector("#chat-log");
     const message = inputArea.value;
 
-    if (message.length >0) {
+    const img = document.createElement('img');
+    img.setAttribute('src','/img');
+    chatLog.append(img);
+
+    if (message.length > 0) {
         const parsedData = new FormData();
-        const splited = message;
 
         parsedData.append("message", JSON.stringify(message.split(" ")));
-
-        axios({
+        
+        const res = await axios({
             method: "post",
             url: "/chatroom",
             data: parsedData,
