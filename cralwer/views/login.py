@@ -4,7 +4,7 @@ from django.views import View
 
 from django.core.handlers.asgi import ASGIRequest
 
-from cralwer_child.models.user import Client
+from cralwer.models.user import User
 from django.contrib.auth.hashers import make_password
 from uuid import uuid4
 
@@ -13,7 +13,7 @@ class Login(View): # class view
         if 'user_token' in req.session:
             return redirect('chat')
         
-        return render(req,'bot/index.html')
+        return render(req,'cralwer/index.html')
     
     def post(self,req:ASGIRequest):
         user_id = req.POST.get('user_id')
@@ -26,13 +26,13 @@ class Login(View): # class view
         if checkbox:
             user_info = Client.objects.filter(user_id=user_id).first()
             if user_info:
-                return render(req,'bot/index.html',msg)
+                return render(req,'cralwer/index.html',msg)
             else:
                 user_info = Client.objects.create(id=uuid4(),user_id=user_id,password=make_password(user_pw))
         else:
             user_info = Client.objects.filter(user_id=user_id,password=make_password(user_pw)).first()
             if not user_info:
-                return render(req,'bot/index.html',msg)
+                return render(req,'cralwer/index.html',msg)
         
         
         return redirect('chat')

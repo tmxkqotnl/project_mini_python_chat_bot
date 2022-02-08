@@ -2,20 +2,17 @@ from django.shortcuts import render,redirect
 from django.views import View
 from django.core.handlers.asgi import ASGIRequest
 from django.utils import timezone
-from cralwer_child.models.searched import ChatContent
+from cralwer.models.searched import Searched
 from uuid import uuid4,UUID
 
-from cralwer_child.models.user import Client
+from cralwer.models.user import User
 
 
 class ChatRoom(View):
     def get(self, req: ASGIRequest):
-        if not "user_id" in req.session or not "user_pk" in req.session:
-            return redirect('login')
-
         return render(
             req,
-            "bot/chatroom.html",
+            "cralwer/chatroom.html",
             {
                 "user_id": req.session["user_id"],
                 "user_pk": req.session["user_pk"],
@@ -38,4 +35,4 @@ class ChatRoom(View):
                 static_url=None,
             )
 
-        return render(req,'bot/chatroom.html',{'user':req.session['user_id']})
+        return render(req,'cralwer/chatroom.html',{'user':req.session['user_id']})

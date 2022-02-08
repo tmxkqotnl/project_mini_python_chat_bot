@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -48,7 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'cralwer_.middleware.user_middleware.UserMiddleware',
+    'cralwer.middleware.user_middleware.UserMiddleware',
 ]
 
 ROOT_URLCONF = 'crawler_project.urls'
@@ -122,7 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "cralwer_\\static"),
+    os.path.join(BASE_DIR, "cralwer\\static"),
 )
 STATIC_URL = 'static/'
 
@@ -132,7 +133,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ASGI_APPLICATION = 'cralwer.asgi.application'
+# ASGI_APPLICATION = 'cralwer.asgi.application'
 
 SESSION_COOKIE_AGE = 120 # 세션 및 쿠키 생존시간
 SESSION_SAVE_EVERY_REQUEST = True # 세션 생존시간 매번 갱신

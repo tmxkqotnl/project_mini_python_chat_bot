@@ -1,7 +1,7 @@
 from django.shortcuts import redirect
 from django.views import View
 from django.http import JsonResponse
-from cralwer_child.models.searched import ChatContent
+from cralwer.models.searched import Searched
 from django.core.handlers.asgi import ASGIRequest
 from django.core import serializers
 
