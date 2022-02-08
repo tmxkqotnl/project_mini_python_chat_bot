@@ -124,6 +124,8 @@ USE_TZ = True
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "cralwer\\static"),
+    os.path.join(BASE_DIR, "cralwer\\img"),
+    
 )
 STATIC_URL = 'static/'
 
