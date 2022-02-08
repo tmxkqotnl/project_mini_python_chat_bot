@@ -5,7 +5,7 @@ then
     python manage.py runserver "$2"
 elif [ "$1" == "migration" ]
 then
-    python manage.py makemigrations bot
+    python manage.py makemigrations cralwer
     wait
     python manage.py migrate
 elif [ "$1" == "up" ]

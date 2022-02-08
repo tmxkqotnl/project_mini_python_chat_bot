@@ -30,7 +30,6 @@
         <div class="wrapper">
             <div class="welcome_message">
                 <pre>
-                    체크박스를 클릭한 후 계정이 존재하지 않으면 만듭니다.
                     {{message}}
                 </pre>
             </div>
@@ -55,13 +54,21 @@
                         />
                     </p>
                     <p class="p_wrapper">
-                        <input type="submit" value="button" />
-                        <label for="checkbox">계정만들기</label>
-                        <input
-                            type="checkbox"
-                            name="create"
-                            value="checked"
-                        />
+                        <label
+                            ><input type="radio" name="sex" value="m" checked="true" />
+                            Male</label
+                        >
+                        <label
+                            ><input
+                                type="radio"
+                                name="sex"
+                                value="f"
+                            />
+                            Female</label
+                        >
+                    </p>
+                    <p class="p_wrapper">
+                        <input type="submit" value="입장하기" />
                     </p>
                 </form>
             </div>
