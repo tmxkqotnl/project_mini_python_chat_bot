@@ -4,3 +4,6 @@
 .pycg
 memo.txt
 /**/migrations
+vol/
+redis/
+dump.rdb
