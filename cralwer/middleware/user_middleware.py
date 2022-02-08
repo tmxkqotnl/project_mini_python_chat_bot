@@ -5,13 +5,17 @@ class UserMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
     def __call__(self, req):
+        res = self.process_request(req)
+        if not res:
+            res = self.get_response(req)
         
-        response = self.get_response(request)
-        
-        return response
+        return res
+    
     def process_request(self,req):
-        print(req.path.__len__())
-        if 'user_token' in req.session and req.path.__len__() == 1:
-            return None
+        cond = 'user_token' in req.session
+        if req.path.__len__() != 1 and not cond:
+            return redirect('/')
+        elif req.path.__len__() == 1 and cond:
+            return redirect('/chatroom')
         
-        return redirect('/')
+        return None

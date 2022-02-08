@@ -1,0 +1,1 @@
+CRAWLING_START = '/춘배야'

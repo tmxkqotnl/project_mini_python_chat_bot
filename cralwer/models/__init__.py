@@ -7,3 +7,4 @@ from .searched import Searched
 from .sports import Sports
 from .token import Token
 from .user import User
+from .query import Query
