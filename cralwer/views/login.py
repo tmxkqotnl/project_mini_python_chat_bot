@@ -1,13 +1,16 @@
 from typing import Optional
 from django.shortcuts import redirect, render
 from django.views import View
-from bot.models.client import Client
-from uuid import uuid4
+
 from django.core.handlers.asgi import ASGIRequest
+
+from cralwer_child.models.user import Client
+from django.contrib.auth.hashers import make_password
+from uuid import uuid4
 
 class Login(View): # class view
     def get(self,req:ASGIRequest):
-        if 'user_id' in req.session and 'user_pk' in req.session:
+        if 'user_token' in req.session:
             return redirect('chat')
         
         return render(req,'bot/index.html')
@@ -25,13 +28,11 @@ class Login(View): # class view
             if user_info:
                 return render(req,'bot/index.html',msg)
             else:
-                user_info = Client.objects.create(id=uuid4(),user_id=user_id,password=user_pw)
+                user_info = Client.objects.create(id=uuid4(),user_id=user_id,password=make_password(user_pw))
         else:
-            user_info = Client.objects.filter(user_id=user_id,password=user_pw).first()
+            user_info = Client.objects.filter(user_id=user_id,password=make_password(user_pw)).first()
             if not user_info:
                 return render(req,'bot/index.html',msg)
         
-        req.session['user_id'] = user_id
-        req.session['user_pk'] = str(user_info.id)
         
         return redirect('chat')

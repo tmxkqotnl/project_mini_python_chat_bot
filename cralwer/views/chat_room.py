@@ -1,12 +1,11 @@
-from typing import Optional
 from django.shortcuts import render,redirect
 from django.views import View
 from django.core.handlers.asgi import ASGIRequest
 from django.utils import timezone
-from bot.models.chat_content import ChatContent
+from cralwer_child.models.searched import ChatContent
 from uuid import uuid4,UUID
 
-from bot.models.client import Client
+from cralwer_child.models.user import Client
 
 
 class ChatRoom(View):
