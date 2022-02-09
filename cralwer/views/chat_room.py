@@ -3,12 +3,15 @@ from django.shortcuts import render
 from django.views import View
 from django.core.handlers.asgi import ASGIRequest
 from cralwer.const import CATEGORIES, CRAWLING_START
+from django.http import JsonResponse
 
 from cralwer.models.searched import Searched
 from cralwer.models.token import Token
 from cralwer.models.query import Query
 
 from uuid import uuid4
+
+from cralwer.controller.corona_controller import corona_api
 
 class ChatRoom(View):
     def get(self, req: ASGIRequest):
@@ -31,7 +34,7 @@ class ChatRoom(View):
             categories = message[1:]
             
             for i in range(len(categories),len(CATEGORIES)):
-                categories = categories + [None ]
+                categories = categories + [None]
                 
             Query.objects.create(
                 id = uuid4(),
