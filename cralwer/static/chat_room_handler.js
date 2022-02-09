@@ -8,18 +8,24 @@ document.querySelector("#chat").onkeyup = function (e) {
     }
 };
 
-document.querySelector("#submit").onclick = function (e) {
+document.querySelector("#submit").onclick = async (e) => {
     const inputArea = document.querySelector("#chat");
     const chatLog = document.querySelector("#chat-log");
     const message = inputArea.value;
 
-    if (message.length >0) {
+    // const img = document.createElement('img');
+    // img.setAttribute('src','/img');
+    // chatLog.append(img);
+
+    if (message.length > 0) {
         const parsedData = new FormData();
-        const splited = message;
+        const splited = message.split(" ");
+        let msg = message;
 
-        parsedData.append("message", JSON.stringify(message.split(" ")));
+        inputArea.value = "";
+        parsedData.append("message", JSON.stringify(splited));
 
-        axios({
+        await axios({
             method: "post",
             url: "/chatroom",
             data: parsedData,
@@ -28,15 +34,33 @@ document.querySelector("#submit").onclick = function (e) {
                 Accept: "application/json",
             },
         });
+
+        // let div_tag = document.createElement("div");
+
+        // div_tag.setAttribute("class", "myMessage");
+        // div_tag.innerText = message;
+        // chatLog.append(div_tag);
+
+        if (splited[0] === "/춘배야") {
+            const res = await axios({
+                method: "get",
+                url: "/query",
+                data: parsedData,
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+            });
+            msg = JSON.stringify(res.data.data);
+        } else {
+            msg = '잘못된 입력값';
+        }
+        div_tag = document.createElement("div");
+        div_tag.setAttribute('class','myMessage');
+        div_tag.innerText = msg;
+        chatLog.append(div_tag);
+
+        chatLog.scrollTop = chatLog.scrollHeight;
     }
-
-    div_tag = document.createElement("div");
-    div_tag.setAttribute("class", "myMessage");
-    div_tag.innerText = message;
-
-    chatLog.append(div_tag);
-
-    chatLog.scrollTop = chatLog.scrollHeight;
-
     inputArea.value = "";
 };
