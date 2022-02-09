@@ -1,0 +1,407 @@
+[33mcommit 43be04edea2406193bc15fe3c5bf2a5e0f15a649[m[33m ([m[1;36mHEAD -> [m[1;32mhamster[m[33m, [m[1;31morigin/hamster[m[33m)[m
+Merge: 3248c5b 70296dc
+Author: hamster_joa <swp313@gmail.com>
+Date:   Tue Feb 8 19:47:05 2022 +0900
+
+    hi
+
+[33mcommit 3248c5b005733d73f0b23a0e48f4bffaa9caf57f[m
+Author: hamster_joa <swp313@gmail.com>
+Date:   Tue Feb 8 19:30:46 2022 +0900
+
+    안뇽
+
+[33mcommit 70296dc60b96d94fab80e566c1045b04f0616c16[m[33m ([m[1;32mmain[m[33m)[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Tue Feb 8 19:25:18 2022 +0900
+
+    fix, img static directory
+
+[33mcommit a22e524bef39e6ea2f27dcd1f26f5af0bd47fa6e[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Tue Feb 8 19:25:04 2022 +0900
+
+    rm, user_info
+
+[33mcommit 8119c9f0e8004e9404e733f710e25180bce1da71[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Tue Feb 8 19:24:59 2022 +0900
+
+    fix, fix uuid
+
+[33mcommit 8718b8422df3a1fa76e44ab6c63e248badc910b6[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Tue Feb 8 19:24:45 2022 +0900
+
+    fix, file view frame
+
+[33mcommit 842ddb4380de77466ed76acbf74b9839dca0a2a1[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Tue Feb 8 19:24:36 2022 +0900
+
+    fix, 쿼리 처리중
+
+[33mcommit 3e736118479f0861cd31dd3a283f3da752ad75fa[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Tue Feb 8 19:24:25 2022 +0900
+
+    fix, 테스팅중
+
+[33mcommit b2fadae5fc8ee094ca582df323bb5074bf6f9651[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Tue Feb 8 19:24:11 2022 +0900
+
+    fix, get query
+
+[33mcommit d8ae5a53a42f19cab41b8c76f2ea9c5814579423[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Tue Feb 8 19:24:01 2022 +0900
+
+    fix, file url
+
+[33mcommit ffae9c374006396d224dd1997fa550ab5a09ca91[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Tue Feb 8 19:23:03 2022 +0900
+
+    feat, add constant
+
+[33mcommit 500270d72bfa5c3b2b30b1e38b42dd7f3c802d59[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Tue Feb 8 17:51:59 2022 +0900
+
+    현재까지 작업
+
+[33mcommit f8d0651b0852147196c167ab05277276ce56446a[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Tue Feb 8 13:45:59 2022 +0900
+
+    fix, 서버 세팅 에러 픽스
+
+[33mcommit 928672d26c9e02f333f2c35cfa342c0979e3cdf6[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Tue Feb 8 13:14:30 2022 +0900
+
+    fix, 폴더 이름바꿈
+
+[33mcommit 4e5e1b94fac3491d519e6071bf9e19f19475d0e5[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Tue Feb 8 08:34:49 2022 +0900
+
+    etc, 0207 작업
+
+[33mcommit ad4fea92e25538f15491ca1cb757fd7a36504871[m
+Merge: 4e954f3 82a6b9b
+Author: hamsterjoa <97775652+hamsterjoa@users.noreply.github.com>
+Date:   Mon Feb 7 13:17:20 2022 +0900
+
+    Merge pull request #7 from tmxkqotnl/hamster
+    
+    jihyun
+
+[33mcommit 82a6b9b32abaf25f968e39d11c54808609c0103c[m
+Author: hamster_joa <swp313@gmail.com>
+Date:   Mon Feb 7 13:15:53 2022 +0900
+
+    jihyun
+
+[33mcommit 4e954f3c9d1bbbd9dbb4da2bababb91f71f224bc[m
+Author: hamsterjoa <97775652+hamsterjoa@users.noreply.github.com>
+Date:   Mon Feb 7 13:04:41 2022 +0900
+
+    Update README.MD
+
+[33mcommit 69ce0715b1906ea794850eb04e292f15a8c060ef[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Mon Feb 7 11:16:00 2022 +0900
+
+    etc, 현재까지 작업
+
+[33mcommit 629370f973f9a0b2c81051ce01faf907281ef57f[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Mon Feb 7 11:15:47 2022 +0900
+
+    fix, axios
+
+[33mcommit deb021453fc9dd8b2f2bc87edfb036b8490e05c1[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Mon Feb 7 11:15:34 2022 +0900
+
+    fix, add jquery
+
+[33mcommit 7c377e97679a3e0d41f947c3a9712cd53af1e48c[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Mon Feb 7 11:14:23 2022 +0900
+
+    etc, reset
+
+[33mcommit cd177a3abbc9306c89060936ad6430d5f0b56bd8[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Mon Feb 7 11:14:13 2022 +0900
+
+    fix, set url
+
+[33mcommit e1752725e2fe10dff5c9c09344bc8c90b5580b77[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Mon Feb 7 11:12:44 2022 +0900
+
+    fix, reset readme
+
+[33mcommit 14ee4eef460b46d3fe5331a390812f4d2de69ecf[m
+Merge: 01c21b1 0f8fd56
+Author: can7568 <81204056+can7568@users.noreply.github.com>
+Date:   Mon Feb 7 11:09:51 2022 +0900
+
+    Merge pull request #6 from tmxkqotnl/abc
+    
+    Abc
+
+[33mcommit 0f8fd568d88658f273acb2f7818dd10d51123109[m[33m ([m[1;31morigin/abc[m[33m)[m
+Merge: d256cc7 01c21b1
+Author: unknown <can7568@naver.com>
+Date:   Mon Feb 7 11:09:05 2022 +0900
+
+    하지마
+
+[33mcommit d256cc71816e991b494c8ff1e9dbc58f6ed250f3[m
+Author: unknown <can7568@naver.com>
+Date:   Mon Feb 7 11:06:24 2022 +0900
+
+    뉴 없음 ㅋㅋ
+
+[33mcommit 01c21b1522555d608182864ebffcc767e3459d54[m
+Merge: 9b7ac78 7da2992
+Author: Hitagi <97775522+Hitagi-June@users.noreply.github.com>
+Date:   Mon Feb 7 11:02:10 2022 +0900
+
+    Merge pull request #5 from tmxkqotnl/neu
+    
+    neu
+
+[33mcommit 7da29929e313007f18c7b093d0220b7a4849327b[m[33m ([m[1;31morigin/neu[m[33m)[m
+Author: Hitagi <taeodore@naver.com>
+Date:   Mon Feb 7 11:01:26 2022 +0900
+
+    neu
+
+[33mcommit 9b7ac7812b7faf190423e8ff3b5a13f02462df5f[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Mon Feb 7 09:12:20 2022 +0900
+
+    feat, model __init__
+
+[33mcommit 18cad45ceb6a7797c776f1e7d0f6d137a1992b8b[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Mon Feb 7 09:12:06 2022 +0900
+
+    feat, docker-compose
+
+[33mcommit 0af3c16ee9bfbca7daf0324128aae6febd628d61[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Mon Feb 7 09:11:56 2022 +0900
+
+    fix, add docker volume
+
+[33mcommit d369cdde3f7ba224f9f3af96af893c9c277c40e9[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Mon Feb 7 09:11:43 2022 +0900
+
+    fix, add docker command
+
+[33mcommit 4f53cf356eba0a405d079a30e5d8993d925099d5[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sun Feb 6 15:25:05 2022 +0900
+
+    feat, static dir
+
+[33mcommit d9da891f340391d7827884468b4b9b34b615467f[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sun Feb 6 15:24:49 2022 +0900
+
+    etc, refac
+
+[33mcommit 60fe86ea93ebc9b4609e8b806fbf89518926c85f[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sun Feb 6 15:24:16 2022 +0900
+
+    fix, typing
+
+[33mcommit 86e6962107c013d27f28b7ac5c30aff49b0cba23[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sun Feb 6 15:24:08 2022 +0900
+
+    fix, axios post
+
+[33mcommit b72813b12f9b19cc6b4483cd55aab57be446af0a[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sun Feb 6 15:23:48 2022 +0900
+
+    fix, separate model file
+
+[33mcommit f4bb3e756da583c81bad92cfc0872893895a651e[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sun Feb 6 15:23:33 2022 +0900
+
+    etc, refac
+
+[33mcommit dd1a55b2fbd0f8a4fc59a2a0218401b0ee6c663a[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sun Feb 6 11:21:54 2022 +0900
+
+    fix, 폴더구조 향상
+
+[33mcommit 6831c996de5c380f6f979d0e30d02fbc2f05ecdf[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sun Feb 6 11:21:42 2022 +0900
+
+    feat, 편의성을 위한 쉘 스크립트
+
+[33mcommit 5af82e70f27138c48c0c80fc67faa2ef4f1c8541[m
+Merge: e36fe6c ca9134f
+Author: Song1940 <88179590+Song1940@users.noreply.github.com>
+Date:   Sun Feb 6 10:49:24 2022 +0900
+
+    Merge pull request #4 from tmxkqotnl/songim
+    
+    fix, add uuid
+
+[33mcommit ca9134fe81a8cf02e3e2791bc30d0f6e41aca99d[m[33m ([m[1;31morigin/songim[m[33m)[m
+Author: Ssong1940 <ssong1940@gmail.com>
+Date:   Sun Feb 6 10:46:56 2022 +0900
+
+    fix, add uuid
+
+[33mcommit e36fe6ce67ab1880eed93e8a5f32418583d081da[m
+Merge: 1071b03 a9a430d
+Author: Hitagi <97775522+Hitagi-June@users.noreply.github.com>
+Date:   Sat Feb 5 21:05:57 2022 +0900
+
+    Merge pull request #3 from tmxkqotnl/neu
+    
+    etc, test
+
+[33mcommit a9a430db15128bf99f4ab3a83aa0b3eb23131a16[m
+Author: Hitagi <taeodore@naver.com>
+Date:   Sat Feb 5 21:05:11 2022 +0900
+
+    etc, test
+
+[33mcommit 1071b038eec642fec001944f8a2cdc4182961612[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sat Feb 5 20:20:19 2022 +0900
+
+    fix, change apps order & add channel layer setting
+
+[33mcommit c45efd6aa3a89ccfb7a7b582e8bf30a3bf9a8b1e[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sat Feb 5 20:19:38 2022 +0900
+
+    fix, asgi
+
+[33mcommit af95fee70afff7e7e8950136703b8f0d607c930c[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sat Feb 5 20:19:29 2022 +0900
+
+    feat, chat room doc
+
+[33mcommit fb877c0d41f69d439910c2fd3f37df0b0daf7d10[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sat Feb 5 20:19:09 2022 +0900
+
+    feat, chatroom view && check session
+
+[33mcommit 80a1c051b0ecdb6b8a22904a04cef636c759c811[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sat Feb 5 20:18:50 2022 +0900
+
+    feat, add chat room url
+
+[33mcommit 1540bcc5b244d9631b425160fee9c3f0a446dc08[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sat Feb 5 20:18:18 2022 +0900
+
+    feat, web socket url routing
+
+[33mcommit 1cb24aaf2673f73f7a57e77a658d2f9cd518434c[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sat Feb 5 20:18:05 2022 +0900
+
+    feat, socket consumer
+
+[33mcommit bf542bdb78f66302f9a888a3e94d518de1669a13[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sat Feb 5 17:01:34 2022 +0900
+
+    feat, views
+
+[33mcommit 1198900d39c22580026720b1b96a6be5d42de01a[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sat Feb 5 17:01:22 2022 +0900
+
+    fix, add url
+
+[33mcommit 3266dfe89f8f5dabe91a2092ce02acaa1de379a7[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sat Feb 5 17:01:10 2022 +0900
+
+    etc, exclude migration
+
+[33mcommit 3f80e006db2ede3bba2883f17ec50b95fc5412c6[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sat Feb 5 17:00:24 2022 +0900
+
+    fix, as class view
+
+[33mcommit 07deef0753e64c0be017b5f6264d8f15e38fc0db[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sat Feb 5 17:00:11 2022 +0900
+
+    fix, client model
+
+[33mcommit aae37e1455aedbfaf033c4eae2b293b73c1991bf[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sat Feb 5 14:14:11 2022 +0900
+
+    add subject
+
+[33mcommit e45f034565143524972f4945e92521853f3b2daf[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sat Feb 5 13:35:36 2022 +0900
+
+    fix, apply http protocol
+
+[33mcommit 4797a4ce5e665816b8d17d6e5a4c527ddac0bcc6[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sat Feb 5 13:34:00 2022 +0900
+
+    fix, setting
+
+[33mcommit 54ae3115989a48f6312879e6d978770364153ae2[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sat Feb 5 13:29:35 2022 +0900
+
+    readme && gitignore
+
+[33mcommit 79a8705aea4dd6ba222996991207d34d7646c983[m
+Merge: f38d9df 65eca8a
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sat Feb 5 13:26:01 2022 +0900
+
+    Merge branch 'main' of https://github.com/tmxkqotnl/project_mini_python_chat_bot
+
+[33mcommit 65eca8a76825d2af8cb58b8c963115a5620e34e7[m
+Author: DongHoon kim <82659201+tmxkqotnl@users.noreply.github.com>
+Date:   Sat Feb 5 13:12:43 2022 +0900
+
+    Delete README.md
+
+[33mcommit 32f83d2149fb642878bc7095985d5ab994bcafc5[m
+Author: DongHoon kim <82659201+tmxkqotnl@users.noreply.github.com>
+Date:   Sat Feb 5 13:05:14 2022 +0900
+
+    Initial commit
+
+[33mcommit f38d9df6d1213ec35b55bdda20f17452eb06b161[m
+Author: tmxkqotnl <tmxkqotnl@gmail.com>
+Date:   Sat Feb 5 13:04:37 2022 +0900
+
+    first commit
