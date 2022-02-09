@@ -45,7 +45,7 @@ document.querySelector("#submit").onclick = async (e) => {
             const res = await axios({
                 method: "get",
                 url: "/query",
-                data: parsedData,
+                params: {"message":splited},
                 headers: {
                     "Content-Type": "application/json",
                     Accept: "application/json",
