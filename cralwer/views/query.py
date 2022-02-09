@@ -10,4 +10,4 @@ class Query(View):
         q = req.GET.get('message')
         corona_api(queries=q)
         
-        return JsonResponse({'data':corona_api()})
+        return JsonResponse({'data':q[0]})
