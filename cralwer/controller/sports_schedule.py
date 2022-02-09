@@ -1,24 +1,27 @@
+from os import getcwd
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import requests
+from sympy import re
 
 
-base_url = 'https://sports.naver.com'
-driver = webdriver.Chrome('./chromedriver')
-driver.maximize_window()
+# base_url = 'https://sports.naver.com'
+# print(getcwd())
+# driver = webdriver.Chrome('./chromedriver')
+# driver.maximize_window()
 
 
-driver.get(base_url)
-html = BeautifulSoup(driver.page_source,'lxml')
-tags = html.find('div',{'id':'_sports_lnb_menu'})
+# driver.get(base_url)
+# html = BeautifulSoup(driver.page_source,'lxml')
+# tags = html.find('div',{'id':'_sports_lnb_menu'})
 
-lis = tags.find_all('li', {'class': "main_menu_item"})
-links =[]
-banner_list =['스포츠홈','야구','해외야구','축구','해외축구','농구','배구']
+# lis = tags.find_all('li', {'class': "main_menu_item"})
+# links =[]
+# banner_list =['스포츠홈','야구','해외야구','축구','해외축구','농구','배구']
 
-for li in lis:
-    a= li.find("a", {"class":"link_main_menu"})
-    links.append(base_url + a['href'])
+# for li in lis:
+#     a= li.find("a", {"class":"link_main_menu"})
+#     links.append(base_url + a['href'])
 
 
 #국내야구 결과 출력
@@ -47,19 +50,23 @@ def kbaseball(html):
         left =[]
         right = []
         
+        data = []
         for j in team_left :
             left.append(j.text)
         for j in team_right:
             right.append(j.text)
         for i in range(len(left)):
-            print(left[i], 'vs',right[i])
-        
+            # print(left[i], 'vs',right[i])
+            data.append(str(left[i]+'vs'+right[i]))
+    
+    return data[0:7]
 
 
 #해외야구 결과 출력 
 def wbaseball(html):
     tag = html.find(("tbody", {"id" : "_monthlyScheduleList"}))
     trs = tag.find_all("tr")
+    data =[]
 # for tr in trs:
 #     print(tr.text)
     for i in range(len(trs)):
@@ -76,14 +83,16 @@ def wbaseball(html):
         team_right = result[7]
         right_result = result[8]
 
-        print("%s %s : %s %s"%(team_left.text,left_result.text,right_result.text,team_right.text))
-
+        # print("%s %s : %s %s"%(team_left.text,left_result.text,right_result.text,team_right.text))
+        data.append("%s %s : %s %s"%(team_left.text,left_result.text,right_result.text,team_right.text))
+    
+    return data[0:7]
 
 #축구 일정/결과 
 def ksoccer(html):
     tag = html.find("tbody", {"id": "_monthlyScheduleList"})
     trs = tag.find_all("tr")
-
+    data =[]
     a =None
     for tr in trs:
         date = tr.find("em")
@@ -96,17 +105,20 @@ def ksoccer(html):
             continue
             print(date.text ,spans[0].text)
         elif len(spans)==9:
-            print("%s %s %s:%s %s"%(date.text , spans[3].text, spans[4].text, spans[7].text ,spans[6].text))
+            # print("%s %s %s:%s %s"%(date.text , spans[3].text, spans[4].text, spans[7].text ,spans[6].text))
+            data.append("%s %s %s:%s %s"%(date.text , spans[3].text, spans[4].text, spans[7].text ,spans[6].text)
+)
         else:
-            print("%s %s vs %s"%(date.text , spans[3].text, spans[5].text))
-        
-        
+            # print("%s %s vs %s"%(date.text , spans[3].text, spans[5].text))
+             data.append("%s %s vs %s"%(date.text , spans[3].text, spans[5].text))
+    
+    return data[0:7]
   
   #해외축구 일정/결과 
 def wsoccer(html):
     tag = html.find("tbody", {"id": "_monthlyScheduleList"})
     trs = tag.find_all("tr")
-
+    data =[]
     a =None
     for tr in trs:
         date = tr.find("em")
@@ -119,14 +131,18 @@ def wsoccer(html):
             continue
             print(date.text ,spans[0].text)
         elif len(spans)==9:
-            print("%s %s %s:%s %s"%(date.text , spans[3].text, spans[4].text, spans[7].text ,spans[6].text))
+            # print("%s %s %s:%s %s"%(date.text , spans[3].text, spans[4].text, spans[7].text ,spans[6].text))
+            data.append("%s %s %s:%s %s"%(date.text , spans[3].text, spans[4].text, spans[7].text ,spans[6].text))
         else:
-            print("%s %s vs %s"%(date.text , spans[3].text, spans[5].text))
-        
+            # print("%s %s vs %s"%(date.text , spans[3].text, spans[5].text))
+            data.append("%s %s vs %s"%(date.text , spans[3].text, spans[5].text))
+    
+    return data[:7]
         
   
   #농구
 def basketball(html):
+    data =[]
     tag = html.find("div", {"class": ["sch_volleyball","tb_kbl"]})
     tbodys = tag.find_all("tbody")
     for tbody in tbodys:
@@ -135,14 +151,15 @@ def basketball(html):
         righs = tbody.find_all("span", {"class": "team_rgt"})
         score = tbody.find_all("strong", {"class": "td_score"})
         for i in range(len(lefts)):
-            print("%s %s %s %s"%(date.text, lefts[i].text, score[i].text, righs[i].text))
+            # print("%s %s %s %s"%(date.text, lefts[i].text, score[i].text, righs[i].text))
+            data.append("%s %s %s %s"%(date.text, lefts[i].text, score[i].text, righs[i].text))
 
-
-  
+    return data[:7]
         
   
 #배구
 def volleyball(html):
+    data =[]
     tag = html.find("div", {"class": ["sch_volleyball","tb_kbl"]})
     tbodys = tag.find_all("tbody")
     for tbody in tbodys:
@@ -151,14 +168,35 @@ def volleyball(html):
         righs = tbody.find_all("span", {"class": "team_rgt"})
         score = tbody.find_all("strong", {"class": "td_score"})
         for i in range(len(lefts)):
-            print("%s %s %s %s"%(date.text, lefts[i].text, score[i].text, righs[i].text))
+            # print("%s %s %s %s"%(date.text, lefts[i].text, score[i].text, righs[i].text))
+            data.append("%s %s %s %s"%(date.text, lefts[i].text, score[i].text, righs[i].text))
 
+    return data[:7]
 
   
 function_list=['',kbaseball,wbaseball,ksoccer,wsoccer,basketball, volleyball]
 
 
 def get_url(sport):
+    base_url = 'https://sports.naver.com'
+    print(getcwd())
+    driver = webdriver.Chrome('./chromedriver')
+    driver.maximize_window()
+
+
+    driver.get(base_url)
+    html = BeautifulSoup(driver.page_source,'lxml')
+    tags = html.find('div',{'id':'_sports_lnb_menu'})
+
+    lis = tags.find_all('li', {'class': "main_menu_item"})
+    links =[]
+    banner_list =['스포츠홈','야구','해외야구','축구','해외축구','농구','배구']
+    
+    for li in lis:
+        a= li.find("a", {"class":"link_main_menu"})
+        links.append(base_url + a['href'])
+
+
     num = banner_list.index(sport)
     url = links[num]
     driver.get(url)
@@ -170,9 +208,8 @@ def get_url(sport):
     
     html = BeautifulSoup(driver.page_source, 'lxml')
     #kbaseball(html)
-    function_list[num](html)
+    return function_list[num](html)
 
 
 #banner_list =['야구','해외야구','축구','해외축구','농구','배구']
 
-get_url("농구")
