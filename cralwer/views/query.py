@@ -8,6 +8,7 @@ class Query(View):
     def get(self, req: WSGIRequestHandler):
         
         q = req.GET.get('message')
+        print(q)
         corona_api(queries=q)
         
         return JsonResponse({'data':q[0]})

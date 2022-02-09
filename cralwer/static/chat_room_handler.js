@@ -45,7 +45,7 @@ document.querySelector("#submit").onclick = async (e) => {
             const res = await axios({
                 method: "get",
                 url: "/query",
-                data: parsedData,
+                params: {"message":JSON.stringify(splited)},
                 headers: {
                     "Content-Type": "application/json",
                     Accept: "application/json",
@@ -56,7 +56,7 @@ document.querySelector("#submit").onclick = async (e) => {
             msg = '잘못된 입력값';
         }
         div_tag = document.createElement("div");
-        div_tag.setAttribute('class','myMessage');
+        div_tag.setAttribute('class','myMessage');  
         div_tag.innerText = msg;
         chatLog.append(div_tag);
 
