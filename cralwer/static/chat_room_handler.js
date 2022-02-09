@@ -13,6 +13,12 @@ document.querySelector("#submit").onclick = async (e) => {
     const chatLog = document.querySelector("#chat-log");
     const message = inputArea.value;
 
+    let div_tag = document.createElement("div");
+
+    div_tag.setAttribute("class", "myMessage");
+    div_tag.innerText = message;
+    chatLog.append(div_tag);
+
     // const img = document.createElement('img');
     // img.setAttribute('src','/img');
     // chatLog.append(img);
@@ -35,11 +41,7 @@ document.querySelector("#submit").onclick = async (e) => {
             },
         });
 
-        // let div_tag = document.createElement("div");
-
-        // div_tag.setAttribute("class", "myMessage");
-        // div_tag.innerText = message;
-        // chatLog.append(div_tag);
+        
 
         if (splited[0] === "/춘배야") {
             const res = await axios({

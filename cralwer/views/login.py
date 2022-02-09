@@ -15,11 +15,11 @@ class Login(View): # class view
         return render(req,'cralwer/index.html')
     
     def post(self,req:ASGIRequest):
-        user_id = req.POST.get('user_id') # 암호화 해야함
-        user_pw = req.POST.get('password')
-        checkbox = req.POST.get('sex')
+        user_id:str = req.POST.get('user_id') # 암호화 해야함
+        user_pw:str = req.POST.get('password')
+        checkbox:str = req.POST.get('sex')
         
-        msg = {'message':'아이디 또는 비밀번호를 확인해주세요.'}
+        msg:dict[str,str] = {'message':'아이디 또는 비밀번호를 확인해주세요.'}
         user_info:Optional[User] = User.objects.filter(user_id=user_id).first()
         
         if isinstance(user_info,User):
