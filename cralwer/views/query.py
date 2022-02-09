@@ -7,7 +7,7 @@ from cralwer.controller.corona_controller import corona_api
 class Query(View):
     def get(self, req: WSGIRequestHandler):
         
-        q = req.GET.get('message[]')
+        q = req.GET.get('message')
         print(q)
         corona_api(queries=q)
         
