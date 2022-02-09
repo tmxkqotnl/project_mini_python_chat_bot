@@ -139,3 +139,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SESSION_COOKIE_AGE = 120 # 세션 및 쿠키 생존시간
 SESSION_SAVE_EVERY_REQUEST = True # 세션 생존시간 매번 갱신
+
+CORONA_API_KEY='IB2mN81DYgMz3tul9ZUqnOAE4exprPi6Q'
