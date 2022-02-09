@@ -8,7 +8,7 @@ document.querySelector("#chat").onkeyup = function (e) {
     }
 };
 
-document.querySelector("#submit").onclick = async e => {
+document.querySelector("#submit").onclick = async (e) => {
     const inputArea = document.querySelector("#chat");
     const chatLog = document.querySelector("#chat-log");
     const message = inputArea.value;
@@ -17,13 +17,14 @@ document.querySelector("#submit").onclick = async e => {
     // img.setAttribute('src','/img');
     // chatLog.append(img);
 
-    let data = null;
     if (message.length > 0) {
         const parsedData = new FormData();
-        const splited = message.split(' ');
+        const splited = message.split(" ");
+        let msg = message;
 
+        inputArea.value = "";
         parsedData.append("message", JSON.stringify(splited));
-        
+
         await axios({
             method: "post",
             url: "/chatroom",
@@ -34,36 +35,32 @@ document.querySelector("#submit").onclick = async e => {
             },
         });
 
-        if(splited[0] === '/춘배야'){
+        // let div_tag = document.createElement("div");
+
+        // div_tag.setAttribute("class", "myMessage");
+        // div_tag.innerText = message;
+        // chatLog.append(div_tag);
+
+        if (splited[0] === "/춘배야") {
             const res = await axios({
-                method:'get',
-                url:'/query',
-                data:parsedData,
+                method: "get",
+                url: "/query",
+                data: parsedData,
                 headers: {
                     "Content-Type": "application/json",
                     Accept: "application/json",
                 },
-            })
-            
-            data = res.data;
-        }   
-    }
-
-    let div_tag = document.createElement("div");
-    div_tag.setAttribute("class", "myMessage");
-    div_tag.innerText = message;
-
-    chatLog.append(div_tag);
-
-    chatLog.scrollTop = chatLog.scrollHeight;
-
-    if(data != null){
+            });
+            msg = JSON.stringify(res.data.data);
+        } else {
+            msg = '잘못된 입력값';
+        }
         div_tag = document.createElement("div");
-        div_tag.setAttribute("class", "myMessage");
-        div_tag.innerText = data;
-
+        div_tag.setAttribute('class','myMessage');
+        div_tag.innerText = msg;
         chatLog.append(div_tag);
-    }
 
+        chatLog.scrollTop = chatLog.scrollHeight;
+    }
     inputArea.value = "";
 };

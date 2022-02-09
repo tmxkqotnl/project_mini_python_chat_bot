@@ -16,8 +16,6 @@ def get_dataframe_from_country_api(base_url:str,api_key:str):
     res = requests.get(''.join([base_url,api_key])).json()
 
     if res['resultCode'] == 200 or res['resultCode'] == '0':
-        print('API 요청 성공')
-        
         res.pop('resultCode')
         res.pop('resultMessage')
         
@@ -34,8 +32,6 @@ def get_dataframe_from_vaccine_api(base_url:str,api_key:str):
     status = res['API']
     
     if status['resultCode'] == '200':
-        print('API 요청 성공')
-        
         res.pop('API')
         return pd.DataFrame(res)
     else:
@@ -71,7 +67,7 @@ def corona_data_vaccine(df:pd.DataFrame,tag:str = '전체'):
             new_key = '{}차_접종'.format(k.split('_')[-1])
             new_val = {}
             original_value = list(v.values())
-            print(original_value)
+            
             for i in range(len(vaccine_keys)):
                 new_val[vaccine_keys[i]] = original_value[i]
                 
