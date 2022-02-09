@@ -1,7 +1,6 @@
 from os import getcwd
 from selenium import webdriver
 from bs4 import BeautifulSoup
-import requests
 from sympy import re
 
 
@@ -179,8 +178,7 @@ function_list=['',kbaseball,wbaseball,ksoccer,wsoccer,basketball, volleyball]
 
 def get_url(sport):
     base_url = 'https://sports.naver.com'
-    print(getcwd())
-    driver = webdriver.Chrome('./chromedriver')
+    driver = webdriver.Chrome('C:\\Users\\kdh\\Desktop\\pythonProjects\\project_mini_web_crawling\\crawler_project\\cralwer\\controller\\chromedriver.exe')
     driver.maximize_window()
 
 

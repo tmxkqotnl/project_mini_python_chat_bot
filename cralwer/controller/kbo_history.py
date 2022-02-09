@@ -1,11 +1,8 @@
-import requests
+from os import getcwd
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import re
-from time import sleep
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
 
 
@@ -76,7 +73,7 @@ import pandas as pd
 def winning_rate(team1, team2):
     
     url ='https://www.koreabaseball.com/Schedule/Schedule.aspx?seriesId=0,9'
-    driver = webdriver.Chrome('chromedriver')
+    driver = webdriver.Chrome('C:\\Users\\kdh\\Desktop\\pythonProjects\\project_mini_web_crawling\\crawler_project\\cralwer\\controller\\chromedriver.exe')
     driver.maximize_window()
 
     driver.get(url)
@@ -144,6 +141,3 @@ def winning_rate(team1, team2):
     total = len(df)
     win=len(df[df.win ==team1])
     print("%s와(과) %s의 경기에서 %s의 승률은 : %.2f%%" %(team1, team2, team1, win/total * 100))
-
-winning_rate("한화", "SK")
-
