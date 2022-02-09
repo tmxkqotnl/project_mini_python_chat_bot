@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'crawler_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgresb',
+        'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'admit',
         'HOST': '127.0.0.1',
