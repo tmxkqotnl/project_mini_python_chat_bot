@@ -1,4 +1,4 @@
-name: project
+name: crawling
 channels:
   - defaults
 dependencies:
